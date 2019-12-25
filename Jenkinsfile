@@ -13,7 +13,7 @@ pipeline {
        steps 
        {
          script {
-          sh 'docker --version'
+          sh 'docker build -t huy:test .'
          }
        }
      }
