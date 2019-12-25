@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  environment {
+    PATH = "/usr/local/bin:$PATH"
+  }
   stages {
     stage('Cloning Git') {
       steps {
@@ -10,7 +13,7 @@ pipeline {
        steps 
        {
          script {
-          app = docker.build("test")
+          sh 'docker --version'
          }
        }
      }
